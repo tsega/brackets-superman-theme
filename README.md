@@ -1,3 +1,5 @@
+This theme is for Brackets.io, it was based on [Sublime Text 2/3](https://github.com/justindmartin1/superman-color-scheme) theme of the same name.
+
 # How to use it
 
 1. First install the [Themes for Brackets extension](https://github.com/Jacse/themes-for-brackets) 
