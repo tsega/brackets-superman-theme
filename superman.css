@@ -196,16 +196,17 @@ div.modal-bar div#replace-group input#replace-with{
 .CodeMirror-foldgutter{} /*It's exactly .CodeMirror-gutter{} without .CodeMirror-linenumbers{}.*/
 
     /*Syntax elements & action*/
-.CodeMirror .cm-atom{ color: #2699F1; b } /*Atribbute value ex. #f00 in color:#f00;*/
+.CodeMirror .cm-atom{ color: #2699F1; } /*Atribbute value ex. #f00 in color:#f00;*/
 .CodeMirror .cm-builtin{ color: #27cc00; } /* CSS id's etc */
-.CodeMirror .cm-def{ color: #ea0d0d; } /*variable definition*/
+.CodeMirror .cm-def{ color: #ffd800; } /*variable definition*/
 .CodeMirror .cm-number{ color: #27cc00; } /*Numbers*/
 .CodeMirror .cm-variable{ color: #EA0d0d; } /*Variable name ex. class Variable_name */
-.CodeMirror .cm-variable-2{ color: #EA0d0d; } /*Variable declaration ex. $variable */
+.CodeMirror .cm-variable-2{ color: #ffd800; } /*Variable declaration ex. $variable */
 .CodeMirror .cm-property{ color: #0D61c7; } /*Property ex. color in color:#f00;*/
 .CodeMirror .cm-operator{ color: #27cc00; } /*Operators ex. dots (:) between property and atom value */
 .CodeMirror .cm-comment{ color: #999; } /*Comment*/
 .CodeMirror .cm-string{ color: #27cc00; } /*String elements ex. "description" in name="description" - including quotation*/
+.CodeMirror .cm-string-2{ color: #ffd800; }
 .CodeMirror .cm-meta{ color: #444; } /*Meta elements like ex.: <!DOCTYPE html>*/
 .CodeMirror .cm-qualifier{ color: #2699F1;} /*Final qualifier like css class ex.: .cm-qualifier*/
 .CodeMirror .cm-tag{ color: #EA0d0d;} /*Tags ex. ul or <ul>*/
