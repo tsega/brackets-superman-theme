@@ -11,28 +11,72 @@ Lime - #27cc00
 Yellow - #ffd800
 */
 
-    /* TitleBar */
-#titlebar, .modal-bar{
-    background-color: #86b5ef;
+/************** Main View ************/
+div.main-view{
+    background-color: #031429;
 }
 
+/************** TitleBar *************/
+#titlebar, .modal-bar{    
+    padding: 0 0 0 0;
+    background-color: rgba(255,255,255,0.2);
+}
+body.in-browser .modal-bar, 
+body:not(.has-appshell-menus) .modal-bar {
+    border-top: 1px solid #0d2c53;
+    padding: 5px 10px;
+    color: #fff;
+}
+div.modal-bar div#find-group input#find-what, 
+div.modal-bar div#replace-group input#replace-with{
+    border: none;
+    box-shadow: none;
+}
+#titlebar ul.nav{
+    float: none;
+    margin-left: 0px;
+    background-color: #86b5ef;
+}
+#titlebar ul.nav:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+#titlebar ul.nav li.dropdown a.dropdown-toggle:hover {
+    background: #fff;
+    border-color: #fff;
+}
+#titlebar div.title-wrapper{
+    padding: 5px 0 5px 0;
+}
+#titlebar div.title-wrapper span.title {
+    color: #efefef;
+    font-size: 12px;
+    font-weight:normal;
+    font-family: "ubuntu";    
+}
 #titlebar a.dropdown-toggle{
     font-weight: normal;
     font-style: "ubuntu";
 }
 
-    /*Sidebar*/
+/********************** Sidebar **********************/
 
+/*General sidebar style*/
 #sidebar{ 
     background-color: #86b5ef;
-} /*General sidebar style*/
+} 
+
+/*"Working files" header*/
 #sidebar #working-set-header{
     background-color: #062245;
-} /*"Working files" header*/
+}
+
+/*Working files style*/
 #sidebar #open-files-container{
     background-color: #031934;
     border-bottom: solid 1px #05224b;
-} /*Working files style*/
+}
 #sidebar #open-files-container ul li.selected{    
     background-color: #031429;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
@@ -40,10 +84,10 @@ Yellow - #ffd800
 #sidebar #open-files-container ul li.selected a{
     color: #2699F1;
     background-color: #031429;
-} /*Selected working file*/
+} 
 #sidebar #open-files-container ul li.selected a span.extension{
     background-color: #031429;
-} /*Selected working file's extension*/
+} 
 #sidebar div.sidebar-selection-triangle.triangle-visible{
     background-image:none;
     background-color: #031429 !important;
@@ -51,41 +95,42 @@ Yellow - #ffd800
 #sidebar .sidebar-selection-triangle.triangle-visible:before{
     border-left: 12px solid #031429;
 }
-#sidebar #open-files-container ul li .file-status-icon{} /*Icon next to a file, dot, X etc.*/
+#sidebar #open-files-container ul li .file-status-icon{}
 
 
-    /*Project file header*/
+/******************** Project file header *****************/
+
 #sidebar #project-files-header{
     background-color: #031429;
     border-top: solid 1px #021631;
-} /*Browser header, path select, search, X etc.*/
+} 
 #sidebar #project-files-header #project-dropdown-toggle{
     border: none;
     box-shadow: none;
-} /*Path select toggle*/
+}
 #sidebar #project-files-header #project-dropdown-toggle #project-title:hover{
     color: #efefef;
 }
-/*Currently selected project title*/
-#sidebar #project-files-header #project-dropdown-toggle .dropdown-arrow{} /*Select toggle arrow - SVG image*/
-#sidebar #project-files-header #closeAllFolders{} /*Close all icon*/
-#sidebar #project-files-header #search-files-button{} /*Search file icon*/
+
+#sidebar #project-files-header #project-dropdown-toggle .dropdown-arrow{} 
+#sidebar #project-files-header #closeAllFolders{} 
+#sidebar #project-files-header #search-files-button{}
 
 
-    /*Project files container*/
+/********************* Project files container *******************/
 #sidebar #project-files-container{
     background-color: #062245;
 } /*Project files - WITHOUT header*/
-#sidebar #project-files-container .jstree-icon{} /*Icon next to files (left side), like close/open arrow for parent element*/
-#sidebar #project-files-container li.jstree-closed{} /*Closed tree element*/
-#sidebar #project-files-container li.jstree-open{} /*Open tree element*/
+#sidebar #project-files-container .jstree-icon{} 
+#sidebar #project-files-container li.jstree-closed{} 
+#sidebar #project-files-container li.jstree-open{} 
 #sidebar #project-files-container ul li a{
     background-color: transparent;
-} /*Project container file*/
+}
 #sidebar #project-files-container ul li a.jstree-hovered{
     /*background-color: #031429;*/
 } /*Project container file hovered*/
-#sidebar #project-files-container ul li a span.extension{} /*Project container file's extension*/
+#sidebar #project-files-container ul li a span.extension{}
 #sidebar #project-files-container ul li a.jstree-clicked{
     background-color: #031429;
 }
@@ -98,8 +143,7 @@ Yellow - #ffd800
     border-left: none;
 }
 
-
-    /*Main area*/
+/********************* Main area *******************/
 /*Main coding area, without line count.*/
 .CodeMirror{
     color: #888; 
@@ -107,40 +151,45 @@ Yellow - #ffd800
     font-family: "ubuntu mono";
     background-color: #0f1b2f;
 }
-.CodeMirror-lines{}/*Code lines, syntax coloring has higher priority then .CodeMirror-lines*/
+.CodeMirror-lines{}
 
 .CodeMirror div.CodeMirror-cursor { 
     border-left: 1px solid white;  
     z-index: 3;
-} /*Cursor stling*/
-.CodeMirror div.CodeMirror-secondarycursor {} /* Shown when moving in bi-directional text  - from CM docs*/
-
-	/*Brackets is based on webkit, so you can use scrollbar styling. Example below contains 8px width, grey scrollbar for the main area. You can use it with other section, just remember about z-indexes or things like 'selected' with overlap your scrollbar.*/
-.CodeMirror .CodeMirror-vscrollbar{ width: 8px; bottom:8px !important;} /*Scrollbar vertical. These values MUST be the same as height/width of scrollbars*/
-.CodeMirror .CodeMirror-hscrollbar{ height:8px; right:8px !important;} /*Scrollbar horizontal. These values MUST be the same as height/width of scrollbars*/
-
+}
+.CodeMirror div.CodeMirror-secondarycursor {}
+.CodeMirror .CodeMirror-vscrollbar{ 
+    width: 8px; 
+    bottom: 8px !important;
+} 
+.CodeMirror .CodeMirror-hscrollbar{ 
+    height:8px; 
+    right:8px !important;
+}
 .CodeMirror ::-webkit-scrollbar { 
     width: 8px; 
     height: 8px;
-} /* The width of vertical scrollbars and height of horizontal scrollbars*/
+} 
 .CodeMirror ::-webkit-scrollbar-track {
     background: none;
     box-shadow: 0 0 0 4px rgba(13,97,199,0.5) inset;
     border-radius: 4px;
-} /* The track that scrollbars run in */
+} 
 .CodeMirror ::-webkit-scrollbar-thumb {
     background-color: rgba(13,97,199,0.8) !important;
     border-radius: 4px; 
-} /* The scrollbar thumb */
-
-.CodeMirror-scrollbar-filler {height:8px !important; width:8px !important; background:none;} /* Corner where scrollbars meet. Width and height MUST be the same as that of scrollbars. Background should be the same as that of the scrollbar track*/
-.CodeMirror-gutter-filler{ height:8px !important;} /* Linenumber area left of horizontal scrollbar. Height MUST be the same as width/height of scrollbars */
-
-
-
+}
+.CodeMirror-scrollbar-filler {
+    height: 8px !important; 
+    width: 8px !important; 
+    background:none;
+}
+.CodeMirror-gutter-filler{ 
+    height:8px !important;
+}
 .CodeMirror .CodeMirror-scroll .CodeMirror-gutters{ /*Left vertical bar with line count*/
     color: #EA0d0d;
-    background-color: #676663;
+    background-color: #011833;
 }
 .CodeMirror-gutter{} /*Left bar with line count - it will affect global line count, BUT line count in inline editor won't be changed.*/
 .CodeMirror-linenumbers{} /*Line count bar only, without "gutter"*/
@@ -148,13 +197,14 @@ Yellow - #ffd800
 
     /*Syntax elements & action*/
 .CodeMirror .cm-atom{ color: #2699F1; b } /*Atribbute value ex. #f00 in color:#f00;*/
+.CodeMirror .cm-builtin{ color: #27cc00; } /* CSS id's etc */
 .CodeMirror .cm-def{ color: #ea0d0d; } /*variable definition*/
 .CodeMirror .cm-number{ color: #27cc00; } /*Numbers*/
 .CodeMirror .cm-variable{ color: #EA0d0d; } /*Variable name ex. class Variable_name */
 .CodeMirror .cm-variable-2{ color: #EA0d0d; } /*Variable declaration ex. $variable */
 .CodeMirror .cm-property{ color: #0D61c7; } /*Property ex. color in color:#f00;*/
 .CodeMirror .cm-operator{ color: #27cc00; } /*Operators ex. dots (:) between property and atom value */
-.CodeMirror .cm-comment{ color: p; } /*Comment*/
+.CodeMirror .cm-comment{ color: #999; } /*Comment*/
 .CodeMirror .cm-string{ color: #27cc00; } /*String elements ex. "description" in name="description" - including quotation*/
 .CodeMirror .cm-meta{ color: #444; } /*Meta elements like ex.: <!DOCTYPE html>*/
 .CodeMirror .cm-qualifier{ color: #2699F1;} /*Final qualifier like css class ex.: .cm-qualifier*/
@@ -178,7 +228,7 @@ div.CodeMirror span.CodeMirror-matchingbracket{} /*Matching brackets, open/close
 .CodeMirror-gutter-elt{
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    background-color: #0D61C7;
+    background-color: #053977;
 } /*Active line, line count section*/
 div.CodeMirror span.CodeMirror-searching{} /*Search result highlight- may need !important*/
 
@@ -209,7 +259,7 @@ div.CodeMirror span.CodeMirror-searching{} /*Search result highlight- may need !
 
     /*Right toolbar - live preview, extensions*/
 #main-toolbar{
-    background-color: #0f1c2c;
+    background-color: rgb(34, 56, 83);
 } /*Whole toolbar*/
 #main-toolbar .buttons{} /*Buttons group*/
 
